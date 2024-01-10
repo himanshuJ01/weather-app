@@ -19,7 +19,7 @@ const text = document.getElementById('text');
 
 
 
-const url = 'http://api.weatherapi.com/v1/current.json?key=1dab3192516640cda17124106240801&q=';
+const url = 'https://api.weatherapi.com/v1/current.json?key=1dab3192516640cda17124106240801&q=';
 
 form.addEventListener('submit', (e)=>{
 e.preventDefault();
@@ -35,7 +35,7 @@ fetch(url + location + `&aqi=yes`)
 })
 .then(data => {
     if(data.error){
-
+          console.log("Error occure"+ data.error);
     }
     else{
         state.textContent = data.location.region+"  ,   ";

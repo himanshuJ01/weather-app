@@ -8,7 +8,7 @@ const app = express();
 
 // app.use(express.static(path.join(__dirname, '../public')));
 
-route.get('/wheather', (req,res)=>{
+route.get('', (req,res)=>{
 
     res.render('index');
 });

@@ -11,15 +11,15 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 
 
-// app.use('',(req,res,next)=>{
-//     //Allow the req to continue to the next middleware in line.
-//     next(); 
-// })
-
-app.get('',(req,res,next)=>{
+app.use('',(req,res,next)=>{
     //Allow the req to continue to the next middleware in line.
-   
+    next(); 
 })
+
+// app.get('',(req,res,next)=>{
+//     //Allow the req to continue to the next middleware in line.
+//    res.json();
+// })
 
 
 app.use("/",weatherstack);
