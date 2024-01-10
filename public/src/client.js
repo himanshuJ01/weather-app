@@ -13,8 +13,7 @@ const wind = document.getElementById('wind');
 const wind_dir = document.getElementById('wind_dir');
 const img = document.getElementById('img');
 const text = document.getElementById('text');
-// const img = document.getElementById('img');
-// const img = document.getElementById('img');
+const errortext = document.getElementById('errortext');
 
 
 
@@ -29,13 +28,17 @@ const location = search.value;
 fetch(url + location + `&aqi=yes`)
 .then( response => {
     if(!response.ok){
+        alert("Please enter the name of location correctly");
         throw new Error(`HTTP error! Status: ${response.status}`);
+        
     }
     return response.json();
 })
 .then(data => {
     if(data.error){
-          console.log("Error occure"+ data.error);
+          console.log("Error occur"+ data.error);
+         
+          
     }
     else{
         state.textContent = data.location.region+"  ,   ";
@@ -50,6 +53,7 @@ fetch(url + location + `&aqi=yes`)
         wind_dir.textContent = "  "+data.current.wind_dir;
         img.src = data.current.condition.icon;
         text.textContent = data.current.condition.text;
+
 
     }
 })
