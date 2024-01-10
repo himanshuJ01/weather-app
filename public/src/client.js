@@ -37,8 +37,6 @@ fetch(url + location + `&aqi=yes`)
 .then(data => {
     if(data.error){
           console.log("Error occur"+ data.error);
-         
-          
     }
     else{
         state.textContent = data.location.region+"  ,   ";
